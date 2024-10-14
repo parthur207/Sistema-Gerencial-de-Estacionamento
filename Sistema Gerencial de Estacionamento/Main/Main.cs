@@ -1,8 +1,8 @@
 ﻿namespace Sistema_Gerencial_de_Estacionamento.Main
 {
-    internal class Program
+    internal class Main
     {
-        static void Main(string[] args)
+        static void Program(string[] args)
         {
             int op = 1;
 
@@ -13,11 +13,12 @@
                 Console.WriteLine("1. Registrar Entrada de Veículo/Moto");
                 Console.WriteLine("2. Registrar Saída de Veículo/Moto");
                 Console.WriteLine("3. Consultar Vagas Disponíveis");
-                Console.WriteLine("4. Ver Histórico de Veículos");
-                Console.WriteLine("5. Exibir Tarifas");
-                Console.WriteLine("6. Relatórios Gerenciais (Admin)");
-                Console.WriteLine("7. Configurações do Sistema (Admin)");
-                Console.WriteLine("8. Sair");
+                Console.WriteLine("4. Deletar Registro");
+                Console.WriteLine("5. Ver Histórico de Veículos");
+                Console.WriteLine("6. Exibir Tarifas");
+                Console.WriteLine("7. Relatórios Gerenciais (Admin)");
+                Console.WriteLine("8. Configurações do Sistema (Admin)");
+                Console.WriteLine("9. Sair");
                 Console.WriteLine("============================================");
                 Console.WriteLine("Escolha uma opção:");
                 while (!int.TryParse(Console.ReadLine(), out op) || op < 1 || op > 8)

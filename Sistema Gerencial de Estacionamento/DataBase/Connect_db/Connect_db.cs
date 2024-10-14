@@ -11,7 +11,7 @@ namespace Sistema_Gerencial_de_Estacionamento.DataBase.Connect_db
     {
 
         public  MySqlConnection cnn { get; private set; }
-        protected string Connection_String { get; private set; } = @"Server=127.0.0.0.1;Port=3306;DataBase=Boletos DB; User ID = root; Password=Admin;";
+        protected string Connection_String { get; private set; } = @"Server=127.0.0.0.1;Port=3306;DataBase= DB; User ID = root; Password=Admin;";
 
         protected void Connection()
         {
