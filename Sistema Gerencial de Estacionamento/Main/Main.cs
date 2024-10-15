@@ -1,9 +1,17 @@
-﻿namespace Sistema_Gerencial_de_Estacionamento.Main
+﻿using Sistema_Gerencial_de_Estacionamento.Attributes;
+using Sistema_Gerencial_de_Estacionamento.Features;
+
+namespace Sistema_Gerencial_de_Estacionamento.Main
 {
     internal class Main
     {
         static void Program(string[] args)
         {
+
+            #region Instancições
+            RegisterEntry aux_r=new RegisterEntry();
+
+            #endregion
             int op = 1;
 
             while (true){
@@ -28,7 +36,8 @@
                 switch (op)
                 {
                     case 1:
-                        //implemento de direicionamento ao método
+                        aux_r.R_Name();
+                        aux_r.R_Entry();
                         break;
 
                     case 2:

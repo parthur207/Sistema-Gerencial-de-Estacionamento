@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Sistema_Gerencial_de_Estacionamento.IParking
 {
-    internal interface IRecord_Client
+    internal interface IStorage_Client
     {
-        void R_Name() { }
-        void R_Entry() { }
-        void R_Exit() { }
-        void R_Delete() { }
+        void S_Name() { }
+        void S_Entry() { }
+        void S_Exit() { }
+        void S_Delete() { }
     }
 }
 
