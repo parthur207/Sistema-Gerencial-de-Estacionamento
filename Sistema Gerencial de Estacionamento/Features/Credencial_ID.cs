@@ -10,6 +10,6 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
     internal class Credencial_ID : AtributtesClient
     {
 
-        public void  
+  
     }
 }

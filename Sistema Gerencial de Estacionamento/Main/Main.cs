@@ -9,7 +9,7 @@ namespace Sistema_Gerencial_de_Estacionamento.Main
         {
 
             #region Instancições
-            RegisterEntry aux_r=new RegisterEntry();
+            StorageEntry aux_r=new StorageEntry();
 
             #endregion
             int op = 1;
@@ -36,8 +36,8 @@ namespace Sistema_Gerencial_de_Estacionamento.Main
                 switch (op)
                 {
                     case 1:
-                        aux_r.R_Name();
-                        aux_r.R_Entry();
+                        aux_r.S_Name();
+                        aux_r.S_Entry();
                         break;
 
                     case 2:
