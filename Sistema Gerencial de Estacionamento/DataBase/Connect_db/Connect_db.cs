@@ -24,10 +24,12 @@ namespace Sistema_Gerencial_de_Estacionamento.DataBase.Connect_db
                 using (cnn = new MySqlConnection(Connection_String))
                 {
                     cnn.Open();
+                    validacao_conexao = true;
                 }
             }
             catch (Exception ex)
             {
+                validacao_conexao &= false;
                 Console.WriteLine($"\nOcorreu um erro inesperado na tentiva de conexão ao banco de dados.\n Erro: {ex.Message}");
             }
         }

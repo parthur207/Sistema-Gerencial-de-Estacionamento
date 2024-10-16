@@ -10,5 +10,6 @@ namespace Sistema_Gerencial_de_Estacionamento.IFeatures
     {
 
         void CheckOut() { }
+        void ExibitionVenancies() { }
     }
 }

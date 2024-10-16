@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
-namespace Sistema_Gerencial_de_Estacionamento.Features
+namespace Sistema_Gerencial_de_Estacionamento.DataBase.EF
 {
-    internal class Class2
+    internal class Class1
     {
     }
 }

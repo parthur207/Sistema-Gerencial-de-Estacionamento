@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sistema_Gerencial_de_Estacionamento.Attributes
 {
-    internal class AtributtesClient : AtributtesVehicle
+    internal class AtributesClient : AtributesVehicle
     {
         public static string[] ref_args { get; private set; }//Parâmetro de referência ao método Main
         protected string Nome { get; set; }

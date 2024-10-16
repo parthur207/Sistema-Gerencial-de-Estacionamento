@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sistema_Gerencial_de_Estacionamento.Features
 {
-    internal class StorageEntry : AtributtesClient, IStorage_Client
+    internal class StorageEntry : AtributesClient, IStorage_Client
     {
 
         public void S_Name() 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sistema_Gerencial_de_Estacionamento.Attributes
 {
-    internal class AtributtesVehicle
+    internal class AtributesVehicle
     {
         public Tipo_Veiculo TipoVeiculo { get; set; }
         public string Nome_Veiculo { get; set; }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Sistema_Gerencial_de_Estacionamento.Features
 {
-    class VehicleCheckOut :AtributtesClient, IFeature_Parking
+    class VehicleCheckOut :AtributesClient, IFeature_Parking
     {
         public void CheckOut()
         {
@@ -49,7 +49,9 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
                 else if (op.Equals(1))
                 {
                     validacao2 = false;
-                    //Dimensiona para a feature que colhe a data/horário atual e calcula o valor a ser pago
+                    
+                    Saida=DateTime.Now;
+                    //Dimensiona para a feature que colhe a data/horário atual referencindo ao encerramento da estadia ao estacionamento e calcula o valor a ser pago
                 }
                 else if(op.Equals(2))
                 {
