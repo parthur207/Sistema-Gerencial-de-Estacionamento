@@ -16,6 +16,7 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
             bool aux1 = true;
             while (aux1)
             {
+                Console.WriteLine("============================================");
                 Console.WriteLine("\nDigite o nome do cliente:");
                 Nome = Console.ReadLine().TrimStart().TrimEnd();
 
@@ -31,7 +32,7 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
             }
         }
 
-        public void S_Entry() 
+        public void S_CheckIn() 
         {
             Entrada = DateTime.Now;
 

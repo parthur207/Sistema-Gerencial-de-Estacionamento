@@ -92,19 +92,21 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
                 Console.WriteLine("\nDigite a placa do veículo:");
                 Placa = Console.ReadLine().Trim();
 
-                // ABC1D34
+                //Placa padrão mercosul: ABC1D34
 
                 for (int i = 0; i < Placa.Length; i++) 
                 {
                     if (!char.IsLetter(Placa[0]) || !char.IsLetter(Placa[1]) || !char.IsLetter(Placa[2]) || !char.IsNumber(Placa[3]) || !char.IsLetter(Placa[4]) || !char.IsNumber(Placa[5]) || !char.IsNumber(Placa[6]))
                     {
                         Console.WriteLine("\nA placa informada não está nos padrões mercosul. Padrão exemplo: ABC1D34");
+                        break;
                     }
                     else
                     {
                         aux5 = false;
+                        //incremento
                     }
-                    //incremento
+                    
                 }
 
 

@@ -1,20 +1,27 @@
 ﻿using Sistema_Gerencial_de_Estacionamento.Attributes;
+using Sistema_Gerencial_de_Estacionamento.DataBase.Connect_db;
 using Sistema_Gerencial_de_Estacionamento.Features;
-
 namespace Sistema_Gerencial_de_Estacionamento.Main
 {
-    internal class Main
+    internal class Program 
     {
-        static void Program(string[] args)
+        public static void Console_Main(string[] args)
         {
 
             #region Instancições
-            StorageEntry aux_r=new StorageEntry();
+            StorageEntry aux_C=new StorageEntry();
 
+            Connect_db conexao=new Connect_db();
+
+            StorageVehicle aux_V=new StorageVehicle();
+
+            VehicleCheckOut aux_CO=new VehicleCheckOut();
             #endregion
-            int op = 1;
 
-            while (true){
+            int op = 1;
+            conexao.Connection();
+
+            while (conexao.validacao_conexao){
                 Console.WriteLine("============================================");
                 Console.WriteLine("Sistema de Estacionamento");
                 Console.WriteLine("============================================");
@@ -29,19 +36,24 @@ namespace Sistema_Gerencial_de_Estacionamento.Main
                 Console.WriteLine("9. Sair");
                 Console.WriteLine("============================================");
                 Console.WriteLine("Escolha uma opção:");
-                while (!int.TryParse(Console.ReadLine(), out op) || op < 1 || op > 8)
+                while (!int.TryParse(Console.ReadLine(), out op) || op < 1 || op > 9)
                 {
-                    Console.WriteLine("\nOpção inválida. Digite um digito, sendo de 1 a 8.");
+                    Console.WriteLine("\nOpção inválida. Digite um digito, sendo de 1 a 9.");
                 }
                 switch (op)
                 {
                     case 1:
-                        aux_r.S_Name();
-                        aux_r.S_Entry();
+                        aux_C.S_Name();
+                        aux_C.S_CheckIn();
+                        
+                        aux_V.S_VehicleType();
+                        aux_V.S_VehicleName();
+                        aux_V.S_VehiclePlate();
+                        aux_V.S_VehicleColor();
                         break;
 
                     case 2:
-                        //implemento de direicionamento ao método
+                        aux_CO.CheckOut();
                         break;
 
                     case 3:
@@ -65,8 +77,12 @@ namespace Sistema_Gerencial_de_Estacionamento.Main
                         break;
 
                     case 8:
-                        Console.WriteLine("\nSistema encerrado.");
-                        //Encerrar conexão com o db e encerrar todas as reservas de veículos.
+
+                        conexao.ClosedConnection();
+
+                        //Encerrar conexão com o db
+
+                        //encerrar todas as reservas de veículos.
                         return;
                 }
 

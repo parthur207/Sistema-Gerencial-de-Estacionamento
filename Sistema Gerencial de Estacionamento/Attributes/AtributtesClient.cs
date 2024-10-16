@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 namespace Sistema_Gerencial_de_Estacionamento.Attributes
 {
     internal class AtributtesClient : AtributtesVehicle
-    { 
-        public string Nome { get; set; }
-        public DateTime Entrada { get; set; }
-        public DateTime Saida { get; set; }
+    {
+        public static string[] ref_args { get; private set; }//Parâmetro de referência ao método Main
+        protected string Nome { get; set; }
+        protected DateTime Entrada { get; set; }
+        protected DateTime Saida { get; set; }
+        protected DateTime Periodo { get; set; }
     }
 }
