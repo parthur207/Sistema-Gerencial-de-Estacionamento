@@ -11,12 +11,18 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
     // Classe para estacionamento de carros, herda de AttributesParking
     internal class CarParking : AttributesParking
     {
+
+        protected override int NumeroVagas { get; set; }
+        protected override List<bool>Vagas { get; set; }
+
+        public CarParking(int numeroVagas) : base(numeroVagas){}
+
+    
         // Construtor que passa o número inicial de vagas para a classe base
 
         // Implementação do método abstrato para alterar o número de vagas
         public override void AlterarNumeroVagas(int novoNumero)
         {
-
             Console.WriteLine("\nDigite o novo numero de vagas para o estacionamento de carros/caminhões:");
 
             if (int.TryParse(Console.ReadLine(), out novoNumero) || novoNumero < 0)

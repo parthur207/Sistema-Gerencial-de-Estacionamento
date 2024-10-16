@@ -9,17 +9,16 @@ namespace Sistema_Gerencial_de_Estacionamento.Attributes
     internal abstract class AttributesParking
     {
    
-        protected int NumeroVagas_C { get; set; }
+        protected abstract int NumeroVagas { get; set; }
+        protected abstract List<bool> Vagas { get; set; }
 
-        protected int NumeroVagas_M { get; set; }
-
-        public List<bool> Vagas_C { get; set; }
-
-        public List<bool> Vagas_M { get; set; }
-
-        public abstract void AlterarNumeroVagas(int novoNumero);
-
-        public abstract void ExibirNumeroVagas();
+        public AttributesParking(int numeroVagas) 
+        { 
+            NumeroVagas=numeroVagas;
+            Vagas = new List<bool>(new bool[NumeroVagas]);
+        }
+        public virtual void  AlterarNumeroVagas(int novoNumero) { }
+        public virtual void ExibirNumeroVagas() { }
        
     }
 }

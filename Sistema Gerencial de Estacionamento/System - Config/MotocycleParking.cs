@@ -10,7 +10,7 @@ namespace Sistema_Gerencial_de_Estacionamento.Features___Execuções
     internal class MotocycleParking : AttributesParking
     {
         // Construtor que passa o número inicial de vagas para a classe base
-        public AttributesParking(int numeroVagas) : base(numeroVagas) { }
+        public MotocycleParking(int numeroVagas) : base(numeroVagas) { }
 
         // Implementação do método abstrato para alterar o número de vagas
         public override void AlterarNumeroVagas(int novoNumero)
