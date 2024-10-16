@@ -5,7 +5,7 @@ namespace Sistema_Gerencial_de_Estacionamento.Main
 {
     internal class Program 
     {
-        public static void Console_Main(string[] args)
+        public static void Main(string[] args)
         {
 
             #region Instancições

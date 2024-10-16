@@ -55,7 +55,7 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
                 {
                     validacao2 = false;
 
-                    Program.Console_Main(ref_args);
+                    Program.Main(ref_args);
 
                 }
             }

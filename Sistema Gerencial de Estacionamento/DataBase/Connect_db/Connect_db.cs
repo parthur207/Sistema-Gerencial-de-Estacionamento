@@ -28,7 +28,7 @@ namespace Sistema_Gerencial_de_Estacionamento.DataBase.Connect_db
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"\nOcorreu um erro inesperado na tentiva de conexão ao banco de dados.\n Erro: {ex.ToString()}");
+                Console.WriteLine($"\nOcorreu um erro inesperado na tentiva de conexão ao banco de dados.\n Erro: {ex.Message}");
             }
         }
 
