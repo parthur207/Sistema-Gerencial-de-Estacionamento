@@ -14,6 +14,8 @@ namespace Sistema_Gerencial_de_Estacionamento.Attributes
         protected string Nome { get; set; }
         protected DateTime Entrada { get; set; }
         protected DateTime Saida { get; set; }
-        protected DateTime Periodo { get; set; }
+        protected TimeSpan PeriodoEstadia { get; set; }
+        
+        protected double Preco {  get; set; }
     }
 }

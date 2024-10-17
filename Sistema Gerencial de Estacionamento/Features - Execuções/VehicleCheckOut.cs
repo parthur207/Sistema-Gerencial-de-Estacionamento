@@ -1,4 +1,5 @@
 ﻿using Sistema_Gerencial_de_Estacionamento.Attributes;
+using Sistema_Gerencial_de_Estacionamento.Features___Execuções;
 using Sistema_Gerencial_de_Estacionamento.IFeatures;
 using Sistema_Gerencial_de_Estacionamento.Main;
 using System;
@@ -11,10 +12,14 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
 {
     class VehicleCheckOut : StorageClient, IFeature_Parking
     {
-        protected TimeSpan PeriodoEstadia { get; private  set; }
-        public  TimeSpan CheckOut(DateTime Inicio, DateTime Final)
+       
+        public TimeSpan CheckOut(DateTime Entrada, DateTime Saida)
         {
+
+            PeriodoEstadia = Saida - Entrada;
             return PeriodoEstadia;
         }
+
+
     }
 }

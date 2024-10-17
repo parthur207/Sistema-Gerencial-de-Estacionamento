@@ -1,4 +1,5 @@
 ﻿using Sistema_Gerencial_de_Estacionamento.Attributes;
+using Sistema_Gerencial_de_Estacionamento.Features___Execuções;
 using Sistema_Gerencial_de_Estacionamento.IParking;
 using Sistema_Gerencial_de_Estacionamento.Main;
 using System;
@@ -12,7 +13,7 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
     internal class StorageClient : AtributesClient, IStorage_Client
     {
         VehicleCheckOut aux_co = new VehicleCheckOut();
-
+        FinalValue aux_p = new FinalValue();
         public void S_Name()
         {
             bool aux1 = true;
@@ -87,8 +88,10 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
 
                     Saida = DateTime.Now;
 
-                    aux_co.CheckOut(Entrada, Saida);// Segunda etapa do processo de Check-Out
+                    PeriodoEstadia=aux_co.CheckOut(Entrada, Saida);// Segunda etapa do processo de Check-Out
+                    Preco=aux_p.Pagamento(PeriodoEstadia);
 
+                    Console.WriteLine($"\nDados do pagamento: \nTempo: {PeriodoEstadia} | Valor a ser pago: {Preco}");
                 }
                 else if (op.Equals(2))
                 {

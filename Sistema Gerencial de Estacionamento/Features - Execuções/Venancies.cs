@@ -14,7 +14,7 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
     {
 
         public  Venancies(int numeroVagas): base (numeroVagas) { }
-        public virtual void Exibition_Venancies(Tipo_Veiculo veiculo)
+        public void Exibition_Venancies(Tipo_Veiculo veiculo)
         {
             if (veiculo.Equals(Tipo_Veiculo.Carro) || veiculo.Equals(Tipo_Veiculo.Caminhão)) 
             {

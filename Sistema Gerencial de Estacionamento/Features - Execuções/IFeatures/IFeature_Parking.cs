@@ -11,14 +11,13 @@ namespace Sistema_Gerencial_de_Estacionamento.IFeatures
     {
         TimeSpan CheckOut(DateTime Entrada, DateTime Saida) 
         {
-            TimeSpan Periodo_Estacionamento = Entrada - Saida;
-            return Periodo_Estacionamento;
+            return TimeSpan.Zero;
         }
-
+        void QueryVenancies() { }
         void Exibition_Venancies(Tipo_Veiculo veiculo) { }
 
-        void C_Radom() { }
+        string C_Radom() { return string.Empty; }
 
-        decimal Pagamento() { return 0; }
+        double Pagamento(TimeSpan Periodo) { return 0; }
     }
 }

@@ -12,25 +12,27 @@ namespace Sistema_Gerencial_de_Estacionamento.Features___Execuções
 {
     internal class RandomCredential : StorageClient, IFeature_Parking
     {
-        public string[] C_Radom()
-        { 
-            string[] Credencial = new string[6];
-            bool random = true;
+        public string C_Radom()
+        {
+            string Credencial=string.Empty;
+            bool LoopRandom = true;
 
-            while (random) {
+            while (LoopRandom) {
 
                 Random Letter = new Random();
 
                 for (int i = 0; i < 3; i++)
                 {
                     char letraAleatoria = (char)Letter.Next(65, 91);//ASCII
-                    Credencial[i] = letraAleatoria.ToString();
+                    Credencial+= letraAleatoria.ToString();
                 }
+
                 Random Number = new Random();
+
                 for (int i = 3; i < Credencial.Length; i++)
                 {
                     int numeroAleatorio = Number.Next(0, 10);// 0 A 9
-                    Credencial[i] = numeroAleatorio.ToString();
+                    Credencial+= numeroAleatorio.ToString();
                 }
 
                 //Incremento de método que irá verificar se ja existe alguma credencial parecida com a gerada, se sim, será realizado uma nova
@@ -40,7 +42,7 @@ namespace Sistema_Gerencial_de_Estacionamento.Features___Execuções
                 }
                 else 
                 {
-                    random = false;
+                    LoopRandom = false;
                 }
             }
             return Credencial;
