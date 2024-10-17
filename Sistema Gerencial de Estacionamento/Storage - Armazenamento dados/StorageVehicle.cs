@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sistema_Gerencial_de_Estacionamento.Features
 {
-    internal class StorageVehicle : StorageEntry, IStorage_Vehicle
+    internal class StorageVehicle : StorageClient, IStorage_Vehicle
     {
         public void S_VehicleType()
         {
@@ -106,12 +106,8 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
                         aux5 = false;
                         //incremento
                     }
-                    
                 }
-
-
             }
         }
-
     }
 }

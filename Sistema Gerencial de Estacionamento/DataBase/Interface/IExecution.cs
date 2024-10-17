@@ -8,5 +8,6 @@ namespace Sistema_Gerencial_de_Estacionamento.DataBase.Interface
 {
     internal interface IExecution
     {
+        public void QueryVenancies() { }
     }
 }

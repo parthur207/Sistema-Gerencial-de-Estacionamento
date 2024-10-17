@@ -7,15 +7,18 @@ using System.Threading.Tasks;
 
 namespace Sistema_Gerencial_de_Estacionamento.Features
 {
-    // Classe abstrata para definir comportamento comum
-    // Classe para estacionamento de carros, herda de AttributesParking
+
     internal class CarParking : AttributesParking
     {
 
         protected override int NumeroVagas { get; set; }
         protected override List<bool>Vagas { get; set; }
 
-        public CarParking(int numeroVagas) : base(numeroVagas){}
+        public CarParking(int numeroVagas) : base(numeroVagas)
+        {
+            NumeroVagas=numeroVagas;
+            Vagas = new List<bool>(new bool[NumeroVagas]);
+        }
 
     
         // Construtor que passa o número inicial de vagas para a classe base
@@ -27,7 +30,7 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
 
             if (int.TryParse(Console.ReadLine(), out novoNumero) || novoNumero < 0)
             {
-                Console.WriteLine("\nÉ necessário digitar um número, sendo maior que 0. ");
+                Console.WriteLine("\nÉ necessário digitar um número, sendo maior que 0.");
             }
             else
             {

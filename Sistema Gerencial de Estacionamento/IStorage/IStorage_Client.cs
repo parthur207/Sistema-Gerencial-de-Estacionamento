@@ -12,7 +12,6 @@ namespace Sistema_Gerencial_de_Estacionamento.IParking
         void S_Name() { }
         void S_CheckIn() { }
         void S_CheckOut() { }
-        void S_Delete() { }
     }
 }
 

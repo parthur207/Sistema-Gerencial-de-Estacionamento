@@ -9,8 +9,15 @@ namespace Sistema_Gerencial_de_Estacionamento.Features___Execuções
 {
     internal class MotocycleParking : AttributesParking
     {
-        // Construtor que passa o número inicial de vagas para a classe base
-        public MotocycleParking(int numeroVagas) : base(numeroVagas) { }
+        protected override List<bool> Vagas { get; set; }
+        protected override int NumeroVagas { get; set; }
+
+
+        public MotocycleParking(int numeroVagas) : base(numeroVagas) 
+        {
+            NumeroVagas = numeroVagas;
+            Vagas= new List<bool>(new bool[NumeroVagas]);
+        }
 
         // Implementação do método abstrato para alterar o número de vagas
         public override void AlterarNumeroVagas(int novoNumero)

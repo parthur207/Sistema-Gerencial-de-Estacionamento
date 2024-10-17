@@ -1,6 +1,7 @@
 ﻿using Sistema_Gerencial_de_Estacionamento.Attributes;
 using Sistema_Gerencial_de_Estacionamento.DataBase.Connect_db;
 using Sistema_Gerencial_de_Estacionamento.Features;
+using Sistema_Gerencial_de_Estacionamento.Features___Execuções;
 namespace Sistema_Gerencial_de_Estacionamento.Main
 {
     internal class Program 
@@ -9,13 +10,15 @@ namespace Sistema_Gerencial_de_Estacionamento.Main
         {
 
             #region Instancições
-            StorageEntry aux_C=new StorageEntry();
+            StorageClient aux_C =new StorageClient();
 
             Connect_db conexao=new Connect_db();
 
             StorageVehicle aux_V=new StorageVehicle();
 
-            VehicleCheckOut aux_CO=new VehicleCheckOut();
+            RandomCredential aux_R = new RandomCredential();
+
+            
             #endregion
 
             int op = 1;
@@ -44,16 +47,20 @@ namespace Sistema_Gerencial_de_Estacionamento.Main
                 {
                     case 1:
                         aux_C.S_Name();
-                        aux_C.S_CheckIn();
                         
                         aux_V.S_VehicleType();
                         aux_V.S_VehicleName();
                         aux_V.S_VehiclePlate();
-                        aux_V.S_VehicleColor();
+                        aux_V.S_VehicleColor(); 
+                        
+                       
+                        aux_C.S_CheckIn();
+                        aux_R.C_Radom(); // 
+
                         break;
 
                     case 2:
-                        aux_CO.CheckOut();
+                        aux_C.S_CheckOut();
                         break;
 
                     case 3:

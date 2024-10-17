@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sistema_Gerencial_de_Estacionamento.Attributes
 {
-    internal abstract class AttributesParking
+    internal abstract class AttributesParking 
     {
    
         protected abstract int NumeroVagas { get; set; }
@@ -18,7 +18,17 @@ namespace Sistema_Gerencial_de_Estacionamento.Attributes
             Vagas = new List<bool>(new bool[NumeroVagas]);
         }
         public virtual void  AlterarNumeroVagas(int novoNumero) { }
-        public virtual void ExibirNumeroVagas() { }
+        public virtual void ExibirNumeroVagas(Tipo_Veiculo tipo) 
+        {
+            var vagasDisp = Vagas.Select(x => x.Equals(true)).Count(); 
+            if(vagasDisp <= 0) {
+                Console.WriteLine($"\nNão há vagas disponíveis para Veículos {(tipo)}");
+            }
+            else
+            {
+                Console.WriteLine($"\nNumero de vagas disponíveis para Veículos {(tipo)}: {vagasDisp}");
+            }
+        }
        
     }
 }

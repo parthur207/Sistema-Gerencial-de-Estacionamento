@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema_Gerencial_de_Estacionamento.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,16 @@ namespace Sistema_Gerencial_de_Estacionamento.IFeatures
 {
     internal interface IFeature_Parking
     {
+        TimeSpan CheckOut(DateTime Entrada, DateTime Saida) 
+        {
+            TimeSpan Periodo_Estacionamento = Entrada - Saida;
+            return Periodo_Estacionamento;
+        }
 
-        void CheckOut() { }
-        void ExibitionVenancies() { }
+        void Exibition_Venancies(Tipo_Veiculo veiculo) { }
+
+        void C_Radom() { }
+
+        decimal Pagamento() { return 0; }
     }
 }
