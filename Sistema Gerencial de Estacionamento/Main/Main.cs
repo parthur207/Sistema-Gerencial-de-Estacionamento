@@ -1,4 +1,5 @@
-﻿using Sistema_Gerencial_de_Estacionamento.Attributes;
+﻿using Google.Protobuf.WellKnownTypes;
+using Sistema_Gerencial_de_Estacionamento.Attributes;
 using Sistema_Gerencial_de_Estacionamento.DataBase.Connect_db;
 using Sistema_Gerencial_de_Estacionamento.Features;
 using Sistema_Gerencial_de_Estacionamento.Features___Execuções;
@@ -9,18 +10,21 @@ namespace Sistema_Gerencial_de_Estacionamento.Main
         public static void Main(string[] args)
         {
 
-            #region Instancições
+            #region Instanciações
             StorageClient aux_C =new StorageClient();
 
             Connect_db conexao=new Connect_db();
 
             StorageVehicle aux_V=new StorageVehicle();
 
-            RandomCredential aux_R = new RandomCredential();
+            RandomCredential_f aux_R = new RandomCredential_f();
+            int numeroVagas=0;
+            QueryVenancies_f aux_Q = new QueryVenancies_f(numeroVagas);
 
-            
+            DeleteRecord_f aux_D = new DeleteRecord_f();
             #endregion
 
+            
             int op = 1;
             conexao.Connection();
 
@@ -52,10 +56,8 @@ namespace Sistema_Gerencial_de_Estacionamento.Main
                         aux_V.S_VehicleName();
                         aux_V.S_VehiclePlate();
                         aux_V.S_VehicleColor(); 
-                        
-                       
+
                         aux_C.S_CheckIn();
-                        aux_R.C_Radom(); // 
 
                         break;
 
@@ -64,11 +66,11 @@ namespace Sistema_Gerencial_de_Estacionamento.Main
                         break;
 
                     case 3:
-                        
+                        aux_Q.queryVenancies();
                         break;
 
                     case 4:
-                        //implemento de direicionamento ao método
+                        
                         break;
 
                     case 5:

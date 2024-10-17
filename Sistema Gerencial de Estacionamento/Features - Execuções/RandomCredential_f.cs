@@ -10,7 +10,7 @@ using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
 namespace Sistema_Gerencial_de_Estacionamento.Features___Execuções
 {
-    internal class RandomCredential : StorageClient, IFeature_Parking
+    internal class RandomCredential_f : StorageClient, IFeature_Parking
     {
         public string C_Radom()
         {

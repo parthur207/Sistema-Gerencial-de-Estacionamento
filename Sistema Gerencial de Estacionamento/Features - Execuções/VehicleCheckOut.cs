@@ -13,7 +13,7 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
     class VehicleCheckOut : StorageClient, IFeature_Parking
     {
        
-        public TimeSpan CheckOut(DateTime Entrada, DateTime Saida)
+        public TimeSpan CheckOut_periodo(DateTime Entrada, DateTime Saida)
         {
 
             PeriodoEstadia = Saida - Entrada;

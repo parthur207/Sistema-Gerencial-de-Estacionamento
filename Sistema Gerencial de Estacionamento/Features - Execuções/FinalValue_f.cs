@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Sistema_Gerencial_de_Estacionamento.Features___Execuções
 {
-    internal class FinalValue: VehicleCheckOut, IFeature_Parking
+    internal class FinalValue_f: VehicleCheckOut, IFeature_Parking
     {
         protected static double Preco_Minuto { get; set; } = 0.10;
 
         
-        public double Pagamento(TimeSpan Periodo) 
+        public double Calculo_Pagamento(TimeSpan Periodo) 
         {
             // Calculo padrão do valor a ser pago: VALOR A PAGAR = (0.10 * minutos)
             if (Periodo.TotalMinutes >= 480) //480 minutos, equivalente a 8 horas

@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace Sistema_Gerencial_de_Estacionamento.Features___Execuções
 {
-    internal class QueryVenancies : CarParking, IFeature_Parking
+    internal class QueryVenancies_f : CarParking, IFeature_Parking
     {
-        public QueryVenancies(int numeroVagas) :base(numeroVagas) { }
+        public QueryVenancies_f(int numeroVagas) :base(numeroVagas) { }
 
         public void queryVenancies() 
         {

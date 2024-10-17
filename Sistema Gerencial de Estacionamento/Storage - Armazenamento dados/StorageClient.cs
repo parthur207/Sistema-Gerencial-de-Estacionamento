@@ -13,7 +13,8 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
     internal class StorageClient : AtributesClient, IStorage_Client
     {
         VehicleCheckOut aux_co = new VehicleCheckOut();
-        FinalValue aux_p = new FinalValue();
+        FinalValue_f aux_p = new FinalValue_f();
+        RandomCredential_f aux_rc = new RandomCredential_f();
         public void S_Name()
         {
             bool aux1 = true;
@@ -38,8 +39,9 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
         public void S_CheckIn()
         {
             Entrada = DateTime.Now;
-            //CREDENCIAL DE ACESSO GERADA
-            
+            Credencial_Acesso = aux_rc.C_Radom();
+
+
         }
 
         public void S_CheckOut()
@@ -88,8 +90,8 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
 
                     Saida = DateTime.Now;
 
-                    PeriodoEstadia=aux_co.CheckOut(Entrada, Saida);// Segunda etapa do processo de Check-Out
-                    Preco=aux_p.Pagamento(PeriodoEstadia);
+                    PeriodoEstadia=aux_co.CheckOut_periodo(Entrada, Saida);// Segunda etapa do processo de Check-Out
+                    Preco=aux_p.Calculo_Pagamento(PeriodoEstadia);
 
                     Console.WriteLine($"\nDados do pagamento: \nTempo: {PeriodoEstadia} | Valor a ser pago: {Preco}");
                 }
@@ -100,7 +102,7 @@ namespace Sistema_Gerencial_de_Estacionamento.Features
                     Program.Main(ref_args);
 
                 }
-                }
             }
         }
-    } 
+    }
+} 

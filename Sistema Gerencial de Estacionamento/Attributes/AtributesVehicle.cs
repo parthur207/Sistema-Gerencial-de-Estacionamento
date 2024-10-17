@@ -12,7 +12,6 @@ namespace Sistema_Gerencial_de_Estacionamento.Attributes
         public string Nome_Veiculo { get; set; }
         public string Cor { get; set; }
         public string Placa { get; set; }
-        
     }
         public enum Tipo_Veiculo
         {
