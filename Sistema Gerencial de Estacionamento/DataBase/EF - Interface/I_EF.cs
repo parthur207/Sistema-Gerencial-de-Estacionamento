@@ -7,7 +7,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Sistema_Gerencial_de_Estacionamento.DataBase.EF
 {
-    internal class Class1
+    internal interface I_EF
     {
+        void FullRecords_Query()
+        {
+
+        }
+        void Motos_Query() { }
+
+        void CC_Query() { }
+
+        void 
     }
 }

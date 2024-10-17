@@ -13,7 +13,7 @@ namespace Sistema_Gerencial_de_Estacionamento.IFeatures
         {
             return TimeSpan.Zero;
         }
-        void QueryVenancies() { }
+        void queryVenancies() { }
         void Exibition_Venancies(Tipo_Veiculo veiculo) { }
 
         string C_Radom() { return string.Empty; }
